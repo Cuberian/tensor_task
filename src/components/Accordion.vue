@@ -9,6 +9,8 @@
             :key="item.title"
             :toggler-size="togglerSize"
             :toggler-style="togglerStyle"
+            :title-style="titleStyle"
+            :content-style="contentStyle"
             :order-number="index"
             @stateChanged="stateHandler(index, $event)">
 
@@ -40,6 +42,16 @@ export default {
       required: false,
       type: String,
       default: 'normal'
+    },
+    titleStyle: {
+      required: false,
+      type: String,
+      default: ''
+    },
+    contentStyle: {
+      required: false,
+      type: String,
+      default: ''
     },
     togglerStyle: {
       required: false,

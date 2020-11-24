@@ -2,14 +2,14 @@
   <div class="spoiler">
       <div class="spoiler-container">
         <div class="spoiler-button">
-            <div class="spoiler-button__title">
+            <div :class="['spoiler-button__title', titleStyle]">
               {{ title }}
             </div>
             <div :class="['spoiler-button__toggler','size-' + togglerSize, togglerStyle]" @click="openContent()">
                 <font-awesome-icon :icon="arrow" :size="iconSize" />
             </div>
         </div>
-        <div class="spoiler__content" v-show="isOpen">
+        <div :class="['spoiler__content', contentStyle]" v-show="isOpen">
           {{ content }}
         </div>
       </div>
@@ -33,6 +33,16 @@ export default {
       default: 'normal'
     },
     togglerStyle: {
+      required: false,
+      type: String,
+      default: ''
+    },
+    titleStyle: {
+      required: false,
+      type: String,
+      default: ''
+    },
+    contentStyle: {
       required: false,
       type: String,
       default: ''
